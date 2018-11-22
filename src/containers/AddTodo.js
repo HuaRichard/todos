@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+import { Store } from '../components/App'
 
-const AddTodo = ({ dispatch }) => {
-  let input
+const AddTodo = () => {
+  let input;
+  const { dispatch } = useContext(Store);
 
   return (
     <div>
@@ -24,4 +26,4 @@ const AddTodo = ({ dispatch }) => {
   )
 }
 
-export default connect()(AddTodo)
+export default AddTodo
