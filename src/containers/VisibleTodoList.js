@@ -23,7 +23,7 @@ const VisibleTodoList = () => {
   return (
     <TodoList
       todos={todos}
-      toggleTodo={(e) => dispatch(toggleTodo(e))}
+      toggleTodo={(id) => dispatch(toggleTodo(id))}
     />
   )
 }
