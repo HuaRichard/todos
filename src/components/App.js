@@ -7,12 +7,15 @@ import rootReducer from '../reducers'
 const Store = createContext();
 
 const App = () => {
-  const [state, dispatch] = useReducer(rootReducer, []);
+  const [state, dispatch] = useReducer(rootReducer, {
+    visibilityFilter: 'SHOW_ALL',
+    todos: [],
+  });
   return (
     <Store.Provider value={{ state, dispatch }}>
       <AddTodo />
-      {/* <VisibleTodoList />
-      <Footer /> */}
+      {/* <VisibleTodoList /> */}
+      <Footer />
     </ Store.Provider>
   )
 }

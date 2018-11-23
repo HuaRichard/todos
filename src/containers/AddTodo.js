@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import { Store } from '../components/App'
 
