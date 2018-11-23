@@ -2,7 +2,7 @@ import { toggleTodo } from '../actions'
 import { VisibilityFilters } from '../actions'
 import React, { useContext } from 'react'
 import { Store } from '../components/App'
-import Todo from '../components/Todo'
+import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
@@ -21,15 +21,10 @@ const VisibleTodoList = () => {
   const { state, dispatch } = useContext(Store);
   const todos = getVisibleTodos(state.todos, state.visibilityFilter)
   return (
-    <ul>
-      {todos.map(todo =>
-        <Todo
-          key={todo.id}
-          {...todo}
-          onClick={() => dispatch(toggleTodo(todo.id))}
-        />
-      )}
-    </ul>
+    <TodoList
+      todos={todos}
+      toggleTodo={(e) => dispatch(toggleTodo(e))}
+    />
   )
 }
 
