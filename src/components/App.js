@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Store.Provider value={{ state, dispatch }}>
       <AddTodo />
-      {/* <VisibleTodoList /> */}
+      <VisibleTodoList />
       <Footer />
     </ Store.Provider>
   )
